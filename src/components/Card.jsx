@@ -1,8 +1,8 @@
 const Card = () => {
     return (
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+        <div className=" sm:w-full md:w-[45%] lg:w-[30%] bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
             <a href="#">
-                <img className="p-8 rounded-t-lg" src="/docs/images/products/apple-watch.png" alt="product image" />
+                <img className="p-8 rounded-t-lg" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.bhphotovideo.com%2Fimages%2Fimages2500x2500%2Fapple_m02x3ll_a_watch_series_6_gps_1595000.jpg&f=1&nofb=1&ipt=0d3ed787bd3c6c499684c4edef12b55b145f148020c5998b9d81f3a70c34da59&ipo=images" alt="product image" />
             </a>
             <div className="px-5 pb-5">
                 <a href="#">
