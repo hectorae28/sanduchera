@@ -6,7 +6,7 @@ const Layout = ({children}) => {
         <div className="flex flex-col min-h-[100vh]">
             <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.css" rel="stylesheet" />
             <Header />
-            <main className="min-h-[60vh] mt-20 md:mt-16">
+            <main className="min-h-[80vh] mt-20 md:mt-16 max-w-screen-xl mx-auto">
                 {children}
             </main>
             <Footer />
