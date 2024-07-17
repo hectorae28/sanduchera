@@ -20,6 +20,7 @@ function Home() {
         <Card/>
         <Card/>
         <Card/>
+        <Card/>
       </div>
       <Form/>
     </main>
