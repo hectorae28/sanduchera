@@ -1,28 +1,28 @@
 import Hero from '../components/Hero'
-import Form from '../components/Form'
-import styles from '../styles/home.module.css'
-import Link from 'next/link'
 import Banner from '../components/Banner'
 import Card from '../components/Card'
+import Head from 'next/head'
+import Solucions from '../components/Solucions'
+import Aliados from '../components/Aliados'
 
 function Home() {
-
+  const props={img:"/polibambu.jpg",name:"Laminas",url:"1"}
   return (
     <main className=''>
+      <Head>
+        <title>Home</title>
+      </Head>
       <Hero>
         <Banner />
       </Hero>
-      <h1>Blog</h1>
-      <Link href="/dashboard">
-      <button type="button" className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Purple</button>
-      </Link>
-      <div className=' mx-10 flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center '>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+      <Solucions/>
+      <div className=' m-10 flex flex-col gap-6 md:flex-row md:flex-wrap md:justify-center '>
+        <Card img={"/polibambu.jpg"} name={"Laminas de Polibambu policarbonato "} url={"1"}/>
+        <Card img={"http://techolandvzla.com/wp-content/uploads/2019/10/China-factory-fire-proof-polycarbonate-roofing-sunroof.jpg"} name={"Laminas de policarbonato Alveolo"} url={"2"}/>
+        <Card img={"/polibambu.jpg"} name={"Laminas de Polibambu policarbonato"} url={"1"}/>
+        <Card img={"http://techolandvzla.com/wp-content/uploads/2019/10/China-factory-fire-proof-polycarbonate-roofing-sunroof.jpg"} name={"Laminas de policarbonato Alveolo"} url={"2"}/>
       </div>
-      <Form/>
+      <Aliados/>
     </main>
   )
 }
