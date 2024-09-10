@@ -4,7 +4,6 @@ import Drawer from "./drawer";
 import { useEffect } from "react";
 
 const Header = () => {
-  const router = useRouter()
   const road = [
     {
       name: "Inicio",
@@ -28,7 +27,7 @@ const Header = () => {
     },
     {
       name: "Carrito",
-      link: "/carrito"
+      link: "/cart"
     }
   ]
   useEffect(() => {
@@ -65,12 +64,12 @@ const Header = () => {
             <img src="/logo.png" className="h-12 mr-3 logo" alt="Techoland-Logo" />
           </div>
         </Link>
-        <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" data-drawer-backdrop="true" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
+        <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" data-drawer-backdrop="true" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
           <svg className=" textHeader w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
-        <div className="hidden w-full md:block md:w-auto h-full" id="navbar-default">
+        <div className="hidden w-full lg:block md:w-auto h-full" id="navbar-default">
           <ul className=" bg-transparent h-full font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:dark:bg-gray-900 dark:border-gray-700 text-white" >
             {road.map((item, index) => (
               <li key={index} className="pl-3 pr-4 rounded md:bg-transparent md:p-0 h-full py-6 flex items-center">
@@ -78,7 +77,7 @@ const Header = () => {
                   ?
                   <Link href={item.link} aria-current="page">{item.name}</Link>
                   :
-                  <div className="flex relative h-full items-center" id="dropdownSelector">
+                  <div className="flex relative h-full items-center cursor-pointer" id="dropdownSelector">
                     <Link href={item.link} aria-current="page">
                       <span className="flex-1 text-left whitespace-nowrap">{item.name}</span>
                     </Link>
@@ -88,14 +87,14 @@ const Header = () => {
                       </svg>
                     </button>
                     <ul id="dropdown" className="bg-[#0833a2] absolute space-y-2 top-20 right-0 rounded-b-lg hidden">
-                      <li>
-                        <a href="#" className=" flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">Alveolar</a>
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">
+                        <Link href="/laminas/alveolar" >Alveolar</Link>
                       </li>
-                      <li>
-                        <a href="#" className=" flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">Corrugal</a>
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">
+                        <Link href="#" >Corrugal</Link>
                       </li>
-                      <li>
-                        <a href="#" className=" flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">Monogal</a>
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">
+                        <Link href="#" >Monogal</Link>
                       </li>
                     </ul>
                   </div>

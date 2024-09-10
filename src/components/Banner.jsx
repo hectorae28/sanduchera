@@ -1,6 +1,6 @@
 const Banner = () => {
   return (
-    <div className="flex w-full justify-center flex-col text-center">
+    <div className="flex w-full justify-center flex-col text-center h-[30rem]">
       <h1 className=" mt-8 mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-100 md:text-5xl lg:text-6xl dark:text-white">Especialistas en laminas de Policarbonato</h1>
       <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-400">En Techoland te ofrecemos diferentes láminas de
         policarbonato para techar el espacio que desees.

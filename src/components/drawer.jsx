@@ -33,14 +33,14 @@ const Drawer = ({ road }) => {
                   </button>
                   </div>
                   <ul id="dropdown-example" className="hidden py-2 space-y-2">
-                    <li>
-                      <a href="#" className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Alveolar</a>
+                    <li className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                      <Link href="/laminas/alveolar" >Alveolar</Link>
                     </li>
-                    <li>
-                      <a href="#" className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Corrugal</a>
+                    <li className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                      <Link href="#" >Corrugal</Link>
                     </li>
-                    <li>
-                      <a href="#" className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">Monogal</a>
+                    <li className="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                      <Link href="#" >Monogal</Link>
                     </li>
                   </ul>
                 </div>

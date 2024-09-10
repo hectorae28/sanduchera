@@ -12,7 +12,7 @@ function Home() {
       <Head>
         <title>Home</title>
       </Head>
-      <Hero>
+      <Hero bg={"bg-[url('/hero-image.JPG')]"}>
         <Banner />
       </Hero>
       <Solucions/>

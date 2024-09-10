@@ -1,0 +1,6 @@
+export { default as Hero } from './Hero'
+export { default as Banner } from './Banner'
+export { default as Card } from './Card'
+export { default as Solucions } from './Solucions'
+export { default as Aliados } from './Aliados'
+export { default as Titles } from './Titles'
