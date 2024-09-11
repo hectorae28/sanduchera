@@ -11,7 +11,13 @@ module.exports = {
       "./node_modules/tw-elements/dist/js/**/*.js"
   ],
   theme: {
-      extend: {},
+      extend: {
+          colors: {
+              'primary': '#0833a2',
+              'secondary': '#002090',
+              'tertiary': '#143486',
+          },
+      },
   },
   darkMode: "class",
   }

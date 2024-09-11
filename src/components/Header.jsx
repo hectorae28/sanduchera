@@ -57,7 +57,7 @@ const Header = () => {
     }
   }) */
   return (
-    <nav className="bg-[#0833a2] fixed w-full z-20 top-0 left-0">
+    <nav className="bg-primary fixed w-full z-20 top-0 left-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto h-20 md:h-24 px-4">
         <Link href="/" className="flex items-center text-white">
           <div className="flex cursor-pointer text-white">
@@ -86,14 +86,14 @@ const Header = () => {
                         <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
                       </svg>
                     </button>
-                    <ul id="dropdown" className="bg-[#0833a2] absolute space-y-2 top-20 right-0 rounded-b-lg hidden">
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">
+                    <ul id="dropdown" className="bg-primary absolute space-y-2 top-20 right-0 rounded-b-lg hidden">
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
                         <Link href="/laminas/alveolar" >Alveolar</Link>
                       </li>
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
                         <Link href="#" >Corrugal</Link>
                       </li>
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-[#002090]">
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
                         <Link href="#" >Monogal</Link>
                       </li>
                     </ul>
