@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { useRouter } from "next/router";
 import Drawer from "./drawer";
-import { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import AppContext from "@/context/AppContext";
 
 const Header = () => {
+  const {state} = useContext(AppContext)
+  console.log({state})
   const road = [
     {
       name: "Inicio",
@@ -20,10 +22,6 @@ const Header = () => {
     {
       name: "Accesorios",
       link: "/Accesorios"
-    },
-    {
-      name: "Contacto",
-      link: "/contacto"
     },
     {
       name: "Carrito",
@@ -75,7 +73,12 @@ const Header = () => {
               <li key={index} className="pl-3 pr-4 rounded md:bg-transparent md:p-0 h-full py-6 flex items-center">
                 {item.link !== "/laminas"
                   ?
-                  <Link href={item.link} aria-current="page">{item.name}</Link>
+                  <Link href={item.link} aria-current="page">
+                    <div className="cursor-pointer" >
+                      {item.name}
+                      {(item.name === "Carrito" && (state?.cart?.length>0)) && <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">{state?.cart?.length}</span>}
+                    </div>
+                  </Link>
                   :
                   <div className="flex relative h-full items-center cursor-pointer" id="dropdownSelector">
                     <Link href={item.link} aria-current="page">
@@ -104,7 +107,7 @@ const Header = () => {
             ))}
           </ul>
         </div>
-        <Drawer road={road}/>
+        <Drawer road={road} cart={state?.cart} />
       </div>
     </nav>
   )

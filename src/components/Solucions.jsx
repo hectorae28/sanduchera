@@ -1,29 +1,80 @@
 import React from 'react'
+import Titles from '@/components/Titles'
+import Link from 'next/link'
 
-const Solucions = () => {
+const ProductsList = () => {
+  const data = [
+    {
+      name: "Laminas Alveolar",
+      slug: "alveolar",
+      img: "/alveolar-2.jpg",
+      description: "Los grandes artistas conocen cuánto podemos hacer con la luz. Los grandes arquitectos y diseñadores buscan el material ideal para brindar el máximo de luz natural en los espacios para un correcto ambiente."
+    },
+    {
+      name: "Standing Seam",
+      slug: "Standing Seam",
+      img: "/topgal-home.png",
+      description: "Polygal introduce la nueva generación de láminas de policarbonato: Sistema Topgal. Respaldado por 35 años de experiencia, desde que se inició con las primeras láminas de policarbonato alveolar del mundo, Polygal ha desarrollado el nuevo sistema Topgal combinando una mayor rigidez, aislamiento térmico, máxima resistencia y un diseño estanco."
+    },
+    {
+      name: "LÁMINAS CORRUGAL",
+      slug: "corrugal",
+      img: "/corrugal-home2.jpg",
+      description: "Son resistentes a cambios bruscos de temperatura y fluctuaciones entre los -400 y los 1000 °C. Tienen una excelente flexibilidad que permite obtener importantes radios de curvatura."
+    },
+    {
+      name: "Laminas Macizo",
+      slug: "macizo",
+      img: "/macizo-home.jpg",
+      description: "Las láminas Monogal son láminas de policarbonato extruidas, muy durables y resistentes al impacto. Pueden utilizarse en altos rangos de temperatura y tienen mejor transmisión de luz que muchos tipos de vidrio."
+    }, {
+      name: "Laminas Bambútech",
+      slug: "bambutech",
+      img: "/polibambu-home.jpg",
+      description: "Las Lámina de policarbonato alveolar con varas de bambú integradas. Su resistencia, durabilidad y rústico diseño la convierten en una alternativa estética y funcional, ideal para decoración de terrazas, separación de ambientes. Además, posee un excelente desempeño ante la exposición al sol, pues cuenta con filtro UV en la masa."
+    },
+  ]
   return (
-    <div>
-      <section class="bg-[#161616] dark:bg-gray-900">
-        <div class="gap-8 items-center py-8 px-4 mx-auto max-w-screen-xl xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
-          <img class="w-full" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.dribbble.com%2Fusers%2F846207%2Fscreenshots%2F5645189%2Fisometric_cube_animation.gif&f=1&nofb=1&ipt=4aa99d71f2a6d74cbdfa6ed9330b7b834cfaec5973307e81aaa76499296ca88d&ipo=images" alt="dashboard image" />
-          
-          <div class="mt-4 md:mt-0">
-            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-white">
-              En Techoland encontrarás las mejores láminas de
-            policarbonato del mercado.
-            </h2>
-            <p class="mb-6 font-ligh md:text-lg text-gray-400">
-              Las láminas de policarbonato son uno de los materiales más resistentes actualmente, mucho más que el cristal.
-              </p>
-            <a href="#" class="inline-flex items-center text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900">
-              Has tu Pedido
-              <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-            </a>
+    <div className="bg-fixed bg-no-repeat bg-cover w-full h-full" style={{ backgroundImage: "url('/alveolar.jpg')" }} >
+      <div className="backdrop-blur-[2px] bg-[#161616]/50">
+
+        {data.map((item, index) => (
+          <section key={index} className=" px-4 py-4 antialiased  md:py-8">
+            <div className={index % 2 == 0 ? "mx-auto bg-white flex flex-col xl:flex-row max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16" : "mx-auto bg-white flex flex-col lg:flex-row-reverse max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16 "}>
+              <div className=" flex justify-center lg:w-2/5 lg:mt-0">
+                <img className="mb-4 h-56 w-auto sm:h-96 sm:w-96 md:h-full md:w-full object-contain" src={item.img} alt="product image" />
+              </div>
+              <div className="me-auto place-self-center lg:w-3/5">
+                <Titles type="h2" >{item.name}</Titles>
+                <p className="mb-6 text-gray-800 dark:text-gray-400">{item.description}</p>
+                <Link href={`/laminas/${item.slug}`} >
+                  <button className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-center text-base font-medium text-white hover:bg-secondary focus:ring-4 focus:ring-grey ">
+                    Saber más
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </section>
+        ))}
+        <section className=" px-4 py-8 antialiased  md:py-16">
+          <div className={data.length % 2 == 0 ? "mx-auto bg-white flex flex-col xl:flex-row max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16" : "mx-auto bg-white flex flex-col lg:flex-row-reverse max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16 "}>
+            <div className=" flex justify-center lg:w-2/5 lg:mt-0">
+              <img className="mb-4 h-56 w-56 sm:h-96 sm:w-96 md:h-full md:w-full object-contain" src="/proyectos-home.jpg" alt="product image" />
+            </div>
+            <div className="me-auto place-self-center lg:w-3/5">
+              <Titles type="h2" >LE ASESORAMOS EN SUS PROYECTOS</Titles>
+              <Link href="/proyectos" >
+                <button className=" lg:mt-10 inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-center text-base font-medium text-white hover:bg-secondary focus:ring-4 focus:ring-grey ">
+                  Saber más
+
+                </button>
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   )
 }
 
-export default Solucions
+export default ProductsList
