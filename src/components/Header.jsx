@@ -5,7 +5,6 @@ import AppContext from "@/context/AppContext";
 
 const Header = () => {
   const {state} = useContext(AppContext)
-  console.log({state})
   const road = [
     {
       name: "Inicio",
@@ -64,7 +63,7 @@ const Header = () => {
         </Link>
         <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" data-drawer-backdrop="true" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
           <svg className=" textHeader w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
         <div className="hidden w-full lg:block md:w-auto h-full" id="navbar-default">
@@ -86,7 +85,7 @@ const Header = () => {
                     </Link>
                     <button type="button" className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group ">
                       <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-                        <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+                        <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                       </svg>
                     </button>
                     <ul id="dropdown" className="bg-primary absolute space-y-2 top-20 right-0 rounded-b-lg hidden">
@@ -94,10 +93,10 @@ const Header = () => {
                         <Link href="/laminas/alveolar" >Alveolar</Link>
                       </li>
                       <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
-                        <Link href="#" >Corrugal</Link>
+                        <Link href="/laminas/corrugal" >Corrugal</Link>
                       </li>
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
-                        <Link href="#" >Monogal</Link>
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
+                        <Link href="/laminas/macizo" >Macizo</Link>
                       </li>
                     </ul>
                   </div>

@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import React from 'react'
 import Titles from '@/components/Titles'
 import Link from 'next/link'
 
-const ProductsList = () => {
-  const data = [
+const ProductsList = ({ data }) => {
+  const info = [
     {
       name: "Laminas Alveolar",
       slug: "alveolar",
@@ -38,15 +39,15 @@ const ProductsList = () => {
     <div className="bg-fixed bg-no-repeat bg-cover w-full h-full" style={{ backgroundImage: "url('/alveolar.jpg')" }} >
       <div className="backdrop-blur-[2px] bg-[#161616]/50">
 
-        {data.map((item, index) => (
-          <section key={index} className=" px-4 py-4 antialiased  md:py-8">
+        {data?.map((item, index) => (
+          <section key={item.id} className=" px-4 py-4 antialiased  md:py-8">
             <div className={index % 2 == 0 ? "mx-auto bg-white flex flex-col xl:flex-row max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16" : "mx-auto bg-white flex flex-col lg:flex-row-reverse max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16 "}>
               <div className=" flex justify-center lg:w-2/5 lg:mt-0">
-                <img className="mb-4 h-56 w-auto sm:h-96 sm:w-96 md:h-full md:w-full object-contain" src={item.img} alt="product image" />
+                <img className="mb-4 h-56 w-auto sm:h-96 sm:w-96 md:h-full md:w-full object-contain" src={item.product_image} alt="product image" />
               </div>
               <div className="me-auto place-self-center lg:w-3/5">
-                <Titles type="h2" >{item.name}</Titles>
-                <p className="mb-6 text-gray-800 dark:text-gray-400">{item.description}</p>
+                <Titles type="h2" >{item.nombre}</Titles>
+                <p className="mb-6 text-gray-800 dark:text-gray-400">{item.descripcion} {item.descripcion.length}</p>
                 <Link href={`/laminas/${item.slug}`} >
                   <button className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-center text-base font-medium text-white hover:bg-secondary focus:ring-4 focus:ring-grey ">
                     Saber más
@@ -57,7 +58,7 @@ const ProductsList = () => {
           </section>
         ))}
         <section className=" px-4 py-8 antialiased  md:py-16">
-          <div className={data.length % 2 == 0 ? "mx-auto bg-white flex flex-col xl:flex-row max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16" : "mx-auto bg-white flex flex-col lg:flex-row-reverse max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16 "}>
+          <div className={data?.length % 2 == 0 ? "mx-auto bg-white flex flex-col xl:flex-row max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16" : "mx-auto bg-white flex flex-col lg:flex-row-reverse max-w-screen-xl rounded-lg  border-gray-600 border-solid border-2 p-4 md:p-8 lg:flex lg:p-16 lg:gap-8 xl:gap-16 "}>
             <div className=" flex justify-center lg:w-2/5 lg:mt-0">
               <img className="mb-4 h-56 w-56 sm:h-96 sm:w-96 md:h-full md:w-full object-contain" src="/proyectos-home.jpg" alt="product image" />
             </div>
