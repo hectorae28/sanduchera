@@ -2,7 +2,9 @@
 import Titles from '@/components/Titles'
 import Hero from '@/components/Hero'
 import Head from 'next/head'
-import React from 'react'
+import React, { useState } from 'react'
+import Modal from '@/components/Modal'
+import FormContact from '@/components/FormContact'
 
 export async function getStaticProps() {
   const res = await fetch('http://localhost:8000/api/products/3/')
@@ -11,6 +13,7 @@ export async function getStaticProps() {
 }
 
 const Corrugal = ({ data }) => {
+  const [modalShow, setModalShow] = useState(false)
   return (
     <div>
       <Head>
@@ -24,7 +27,7 @@ const Corrugal = ({ data }) => {
           </p>
           <button
             className="text-white w-full md:absolute md:right-0 md:bottom-[-2rem] md:w-auto mt-4 sm:mt-0 bg-primary hover:bg-secondary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex items-center justify-center"
-          /* onClick={() => setModalShow(true)} */
+            onClick={() => setModalShow(true)}
           >
             <svg
               className="w-5 h-5 -ms-2 me-2"
@@ -47,6 +50,9 @@ const Corrugal = ({ data }) => {
           </button >
         </div>
       </Hero>
+      <Modal show={modalShow} onHide={() => setModalShow(false)} title={"Contactanos"}>
+        <FormContact onHide={() => setModalShow(false)} />
+      </Modal>
       <div className='max-w-screen-lg flex flex-col gap-6 px-4 mx-6 xl:mx-auto mt-5' >
         <Titles type="h2" >Características</Titles>
         <p className=' text-lg md:text-xl text-center md:text-left mb-8'>

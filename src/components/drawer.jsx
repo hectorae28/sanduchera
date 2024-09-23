@@ -7,7 +7,7 @@ const Drawer = ({ road, cart }) => {
     <div id="drawer-navigation" className="fixed top-0 left-0 z-100 h-screen p-4 overflow-y-auto transition-transform -translate-x-full bg-white w-64 dark:bg-gray-800" tabIndex="-1" aria-labelledby="drawer-navigation-label">
       <img src="/logo-black.png" className="h-12 mr-3 logo" alt="Techoland-Logo" />
       <button type="button" data-drawer-hide="drawer-navigation" aria-controls="drawer-navigation" className="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 absolute top-2.5 right-2.5 inline-flex items-center justify-center dark:hover:bg-gray-600 dark:hover:text-white" >
-        <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+        <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
         </svg>
         <span className="sr-only">Close menu</span>
@@ -30,7 +30,7 @@ const Drawer = ({ road, cart }) => {
                   <div >
                     <button type="button" className="flex items-center gap-4 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group cursor-pointer" aria-controls="dropdown-example" data-collapse-toggle="dropdown-example">
                       <span className="flex-1 ml-3 text-left whitespace-nowrap">{item.name}</span>
-                      <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                      <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                       </svg>
                     </button>
@@ -49,6 +49,16 @@ const Drawer = ({ road, cart }) => {
                     <Link href="/laminas/macizo" >
                       <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Macizo
+                      </li>
+                    </Link>
+                    <Link href="/laminas/bambutech" >
+                      <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                        BambuTech
+                      </li>
+                    </Link>
+                    <Link href="/laminas/standing-seam" >
+                      <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                        Standig Seam
                       </li>
                     </Link>
                   </ul>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Aliados = () => {
+const AliadosPlaskolite = () => {
   return (
     <div>
       <section className="bg-[#161616] dark:bg-gray-900">
@@ -26,4 +26,5 @@ const Aliados = () => {
   )
 }
 
-export default Aliados
+
+export default AliadosPlaskolite

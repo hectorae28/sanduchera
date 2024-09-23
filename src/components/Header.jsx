@@ -20,7 +20,7 @@ const Header = () => {
     },
     {
       name: "Accesorios",
-      link: "/Accesorios"
+      link: "/accesorios"
     },
     {
       name: "Carrito",
@@ -62,7 +62,7 @@ const Header = () => {
           </div>
         </Link>
         <button type="button" data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" data-drawer-backdrop="true" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-white rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600">
-          <svg className=" textHeader w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <svg className=" textHeader w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
           </svg>
         </button>
@@ -72,7 +72,7 @@ const Header = () => {
               <li key={index} className="pl-3 pr-4 rounded md:bg-transparent md:p-0 h-full py-6 flex items-center">
                 {item.link !== "/laminas"
                   ?
-                  <Link href={item.link} aria-current="page">
+                  <Link href={item.link}>
                     <div className="cursor-pointer" >
                       {item.name}
                       {(item.name === "Carrito" && (state?.cart?.length>0)) && <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">{state?.cart?.length}</span>}
@@ -80,15 +80,15 @@ const Header = () => {
                   </Link>
                   :
                   <div className="flex relative h-full items-center cursor-pointer" id="dropdownSelector">
-                    <Link href={item.link} aria-current="page">
+                    <Link href={item.link}>
                       <span className="flex-1 text-left whitespace-nowrap">{item.name}</span>
                     </Link>
                     <button type="button" className="flex items-center w-full p-2 text-base text-gray-900 transition duration-75 rounded-lg group ">
-                      <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                      <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                         <path stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 4 4 4-4" />
                       </svg>
                     </button>
-                    <ul id="dropdown" className="bg-primary absolute space-y-2 top-20 right-0 rounded-b-lg hidden">
+                    <ul id="dropdown" className="bg-primary absolute space-y-2 top-24 right-0 rounded-b-lg hidden">
                       <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
                         <Link href="/laminas/alveolar" >Alveolar</Link>
                       </li>
@@ -97,6 +97,12 @@ const Header = () => {
                       </li>
                       <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
                         <Link href="/laminas/macizo" >Macizo</Link>
+                      </li>
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
+                        <Link href="/laminas/bambutech" >BambuTech</Link>
+                      </li>
+                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
+                        <Link href="/laminas/standing-seam" >Standing Seam</Link>
                       </li>
                     </ul>
                   </div>

@@ -1,8 +1,10 @@
 /* eslint-disable react/prop-types */
 import Hero from '@/components/Hero'
 import Titles from '@/components/Titles'
+import Modal from '@/components/Modal'
+import FormContact from '@/components/FormContact'
 import Head from 'next/head'
-import React from 'react'
+import React, { useState } from 'react'
 
 export async function getStaticProps() {
   const res = await fetch('http://localhost:8000/api/products/4/')
@@ -11,7 +13,7 @@ export async function getStaticProps() {
 }
 
 const Macizo = ({ data }) => {
-  console.log({data})
+  const [modalShow, setModalShow] = useState(false)
   return (
     <div>
       <Head>
@@ -27,7 +29,7 @@ const Macizo = ({ data }) => {
           </p>
           <button
             className="text-white w-full md:absolute md:right-0 md:bottom-[-2rem] md:w-auto mt-4 sm:mt-0 bg-primary hover:bg-secondary focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 flex items-center justify-center"
-          /* onClick={() => setModalShow(true)} */
+            onClick={() => setModalShow(true)}
           >
             <svg
               className="w-5 h-5 -ms-2 me-2"
@@ -50,6 +52,9 @@ const Macizo = ({ data }) => {
           </button >
         </div>
       </Hero>
+      <Modal show={modalShow} onHide={() => setModalShow(false)} title={"Contactanos"}>
+        <FormContact onHide={() => setModalShow(false)} />
+      </Modal>
       <div className='max-w-screen-lg flex flex-col items-center gap-6 px-4 mx-6 xl:mx-auto mt-5' >
         <section className="flex flex-col items-center mb-8 max-w-screen-lg">
           <Titles type="h2" >Características</Titles>
@@ -58,13 +63,13 @@ const Macizo = ({ data }) => {
           </p>
           <img className="w-full md:w-1/2 rounded-lg" src="/macizo-1.jpg" alt="laminas image" />
         </section>
-        <Titles type="h2" >
-          Ventajas
-        </Titles>
         <section className="gap-8 items-center py-8 px-4 mx-auto max-w-screen-lg xl:gap-16 md:grid md:grid-cols-2 sm:py-16 lg:px-6">
           <img className="w-full" src="/macizo-2.jpg" alt="laminas image" />
 
           <div className="mt-4 md:mt-0">
+            <Titles type="h2" >
+              Ventajas
+            </Titles>
             <ul className='list-outside list-disc'>
               <li className='mb-3 text-lg text-black md:text-xl '>
                 Virtualmente irrompibles.
@@ -76,10 +81,10 @@ const Macizo = ({ data }) => {
                 Alta claridad y transmisión de luz
               </li>
               <li className='mb-3 text-lg text-black md:text-xl '>
-                Capa con protección UV.
+                Resistente a la interperie y a los rayos UV.
               </li>
               <li className='mb-3 text-lg text-black md:text-xl '>
-                Clasificación al fuego VO a pedido
+                No se amarilla ni cuartea
               </li>
               <li className='mb-3 text-lg text-black md:text-xl '>
                 Pesa menos que una lámina de vidrio.
@@ -96,28 +101,16 @@ const Macizo = ({ data }) => {
               <Titles type="h2" >Aplicaciones</Titles>
               <ul className='max-w-screen-lg grid gap-2 grid-cols-1 lg:gap-8 xl:mx-auto mt-5'>
                 <li className='mb-3 text-lg text-black md:text-xl '>
-                  Excelente aislamiento.
+                  Techos y Lucernarios
                 </li>
                 <li className='mb-3 text-lg text-black md:text-xl '>
-                  Acristalamientos
+                  Estacionamientos
                 </li>
                 <li className='mb-3 text-lg text-black md:text-xl '>
-                  Escudos de vientos Cubiertas y ventanas
+                  Galpones y Piscinas
                 </li>
                 <li className='mb-3 text-lg text-black md:text-xl '>
-                  Barreras acústicas
-                </li>
-                <li className='mb-3 text-lg text-black md:text-xl '>
-                  Mobiliario urbano
-                </li>
-                <li className='mb-3 text-lg text-black md:text-xl '>
-                  Termoformado Iluminación y señalización
-                </li>
-                <li className='mb-3 text-lg text-black md:text-xl '>
-                  Fabricación de piezas
-                </li>
-                <li className='mb-3 text-lg text-black md:text-xl '>
-                  Termoformado (1800- 2300) Doblado en frío
+                  Múltiples aplicaciones
                 </li>
               </ul>
             </div>
@@ -149,7 +142,7 @@ const Macizo = ({ data }) => {
             <div>
               <Titles type="h2" >DIMENSIONES</Titles>
               <p className=' text-lg md:text-xl text-justify md:text-left mb-8'>
-              Espesores(mm): 6MM y 10MM: 1000 a 2050 Largo (mm): 600 6000
+                Espesores(mm): 6MM y 10MM: 1000 a 2050 Largo (mm): 600 6000
               </p>
             </div>
           </div>

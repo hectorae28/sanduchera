@@ -5,6 +5,7 @@ import Titles from '@/components/Titles'
 import Head from 'next/head'
 import React, { useState, useContext } from 'react'
 import AppContext from '@/context/AppContext'
+import FormContact from '@/components/FormContact'
 
 export async function getStaticProps() {
   const res = await fetch('http://localhost:8000/api/products/1/')
@@ -62,8 +63,8 @@ const Alveolar = ({ data }) => {
         </div>
       </Hero>
       <div className='max-w-screen-lg flex flex-col gap-6 px-4 mx-6 xl:mx-auto mt-5' >
-        <Modal show={modalShow} onHide={() => setModalShow(false)} title={"Agregar al carrito"}>
-          <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
+        <Modal show={modalShow} onHide={() => setModalShow(false)} title={"Contactanos"}>
+          {/* <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800 md:p-6">
             <div className="space-y-4 md:flex md:items-center md:justify-between md:gap-6 md:space-y-0">
 
               <img className="h-20 w-20 dark:hidden" src={data?.product_image} alt="imac image" />
@@ -107,8 +108,6 @@ const Alveolar = ({ data }) => {
             </div>
           }
           {pedido.categoria?.CategoriaGrosor.length > 0 &&
-            /* {data.ProductoCategoria.filter(item => item.id === category.id)[0]?.CategoriaGrosor.length > 0 && */
-
             <div>
               <p className="my-3 text-gray-500 dark:text-gray-400">
                 Espesor:
@@ -157,7 +156,8 @@ const Alveolar = ({ data }) => {
 
               Agregar al Carrito
             </button>
-          </div>
+          </div> */}
+          <FormContact />
         </Modal>
         <Titles type="h2" >
           Usos
