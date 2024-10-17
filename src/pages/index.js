@@ -1,14 +1,30 @@
-import styles from '../styles/home.module.css'
-import Link from 'next/link'
+/* eslint-disable react/prop-types */
+/* eslint-disable react/react-in-jsx-scope */
+import Hero from '../components/Hero'
+import Banner from '../components/Banner'
+import AliadosPlaskolite  from '../components/Aliados'
+import Head from 'next/head'
+import ProductsList from '../components/Solucions'
+import { AliadosPlazitPolygal } from '../components'
 
-function Home() {
+export async function getServerSideProps() {
+  const res = await fetch('http://localhost:8000/api/productsList/')
+  const data = await res.json()
+  return { props: { data } }
+}
 
+function Home({data}) {
   return (
-    <main>
-      <h1>Blog</h1>
-      <Link href="/dashboard">
-      <button type="button" className="text-white bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Purple</button>
-      </Link>
+    <main className=''>
+      <Head>
+        <title>Techoland | Inicio</title>
+      </Head>
+      <Hero bg={"bg-[url('/hero-image.JPG')]"}>
+        <Banner />
+      </Hero>
+      <AliadosPlaskolite/>
+      <ProductsList data={data}/>
+      <AliadosPlazitPolygal/>
     </main>
   )
 }

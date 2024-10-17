@@ -2,3 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+.TextHeader{
+    color: black !important;
+}
+.z-30{
+    z-index: 10 !important;
+}
+.slick-next::before{
+  color : black !important;
+}

@@ -1,13 +1,15 @@
-import Header from '../components/Header';
-import Footer from '../components/Footer'
 import '../global.css'
-import "tw-elements/dist/css/tw-elements.min.css";
 import Layout from '../components/Layout';
+import AppContext from '../context/AppContext';
+import useInitialState from '../hooks/useInitialState';
 
 export default function MyApp({ Component, pageProps }) {
+  const InitialState = useInitialState();
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <AppContext.Provider value={InitialState}>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </AppContext.Provider>
   )
 }
