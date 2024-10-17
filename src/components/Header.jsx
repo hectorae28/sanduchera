@@ -4,7 +4,7 @@ import React, { useEffect, useContext } from "react";
 import AppContext from "@/context/AppContext";
 
 const Header = () => {
-  const {state} = useContext(AppContext)
+  const { state } = useContext(AppContext)
   const road = [
     {
       name: "Inicio",
@@ -22,10 +22,10 @@ const Header = () => {
       name: "Accesorios",
       link: "/accesorios"
     },
-    {
+    /* {
       name: "Carrito",
       link: "/cart"
-    }
+    } */
   ]
   useEffect(() => {
     const $dropdownSelector = document.querySelector("#dropdownSelector");
@@ -37,22 +37,6 @@ const Header = () => {
       $dropdown.classList.add("hidden");
     })
   }, [])
-  //console.log(router.pathname)
-  /* globalThis?.window?.addEventListener("scroll", function () {
-    if (router.pathname === "/") {
-      const header = document.querySelector("#header");
-      const logoBlack = document.querySelector(".logoBlack");
-      const logo = document.querySelector(".logo");
-      logo?.classList.toggle("hidden", window.scrollY > 0);
-      logoBlack.classList.remove("hidden", window.scrollY > 0);
-      header.classList.toggle("bg-white", window.scrollY > 0);
-      header.classList.toggle("shadow", window.scrollY > 0);
-      const text = document.querySelectorAll(".textHeader");
-      text.forEach(item => item.classList.toggle("text-black", window.scrollY > 0));
-
-      logoBlack.classList.toggle("hidden", window.scrollY == 0);
-    }
-  }) */
   return (
     <nav className="bg-primary fixed w-full z-20 top-0 left-0">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto h-20 md:h-24 px-4">
@@ -75,7 +59,7 @@ const Header = () => {
                   <Link href={item.link}>
                     <div className="cursor-pointer" >
                       {item.name}
-                      {(item.name === "Carrito" && (state?.cart?.length>0)) && <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">{state?.cart?.length}</span>}
+                      {(item.name === "Carrito" && (state?.cart?.length > 0)) && <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">{state?.cart?.length}</span>}
                     </div>
                   </Link>
                   :
@@ -89,24 +73,43 @@ const Header = () => {
                       </svg>
                     </button>
                     <ul id="dropdown" className="bg-primary absolute space-y-2 top-24 right-0 rounded-b-lg hidden">
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
-                        <Link href="/laminas/alveolar" >Alveolar</Link>
-                      </li>
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
-                        <Link href="/laminas/corrugal" >Corrugal</Link>
-                      </li>
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
-                        <Link href="/laminas/macizo" >Macizo</Link>
-                      </li>
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
-                        <Link href="/laminas/bambutech" >BambuTech</Link>
-                      </li>
-                      <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
-                        <Link href="/laminas/standing-seam" >Standing Seam</Link>
-                      </li>
+                      <Link href="/product/tradicional" >
+                        <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
+                          Alveolar Tradicional
+                        </li>
+                      </Link>
+                      <Link href="/product/evolucion" >
+                        <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
+                          Alveolar Evolución
+                        </li>
+                      </Link>
+                      <Link href="/product/sinus" >
+                        <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
+                          Corrugal Sinus
+                        </li>
+                      </Link>
+                      <Link href="/product/greca" >
+                        <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary">
+                          Corrugal Greca
+                        </li>
+                      </Link>
+                      <Link href="/product/macizo" >
+                        <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
+                          Macizo
+                        </li>
+                      </Link>
+                      <Link href="/product/bambutech" >
+                        <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
+                          BambuTech
+                        </li>
+                      </Link>
+                      <Link href="/product/standing-seam" >
+                        <li className="flex items-center w-full p-2 transition duration-75 px-8 group hover:bg-secondary rounded-b-lg">
+                          Standing Seam
+                        </li>
+                      </Link>
                     </ul>
                   </div>
-
                 }
               </li>
             ))}

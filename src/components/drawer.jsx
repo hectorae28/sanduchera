@@ -10,7 +10,7 @@ const Drawer = ({ road, cart }) => {
         <svg className="w-3 h-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
         </svg>
-        <span className="sr-only">Close menu</span>
+        <span className="sr-only">Cerrar menu</span>
       </button>
       <div className="py-4 overflow-y-auto">
         <ul className="space-y-2 font-medium">
@@ -23,7 +23,6 @@ const Drawer = ({ road, cart }) => {
                     <span className="flex-1 ml-3 whitespace-nowrap">{item.name}</span>
                     {(item.name === "Carrito" && (cart?.length > 0)) && <span className="inline-flex items-center justify-center w-3 h-3 p-3 ms-1 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">{cart?.length}</span>}
                   </div>
-
                 </Link>
                 :
                 <div>
@@ -36,27 +35,37 @@ const Drawer = ({ road, cart }) => {
                     </button>
                   </div>
                   <ul id="dropdown-example" className="hidden py-2 space-y-2">
-                    <Link href="/laminas/alveolar" >
+                    <Link href="/product/tradicional" >
                       <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                        Alveolar
+                        Alveolar Tradicional
                       </li>
                     </Link>
-                    <Link href="/laminas/corrugal" >
+                    <Link href="/product/evolucion" >
                       <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
-                        Corrugal
+                        Alveolar Evolución
                       </li>
                     </Link>
-                    <Link href="/laminas/macizo" >
+                    <Link href="/product/sinus" >
+                      <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                        Corrugal Sinus
+                      </li>
+                    </Link>
+                    <Link href="/product/greca" >
+                      <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
+                        Corrugal Greca
+                      </li>
+                    </Link>
+                    <Link href="/product/macizo" >
                       <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Macizo
                       </li>
                     </Link>
-                    <Link href="/laminas/bambutech" >
+                    <Link href="/product/bambutech" >
                       <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         BambuTech
                       </li>
                     </Link>
-                    <Link href="/laminas/standing-seam" >
+                    <Link href="/product/standing-seam" >
                       <li className="flex cursor-pointer items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700">
                         Standig Seam
                       </li>
@@ -65,7 +74,6 @@ const Drawer = ({ road, cart }) => {
                 </div>
               }
             </li>
-
           ))}
         </ul>
       </div>

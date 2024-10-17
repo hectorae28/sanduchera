@@ -1,9 +1,15 @@
 import Hero from '@/components/Hero'
 import Titles from '@/components/Titles'
+import SliderComponent from '@/components/Slider'
 import React from 'react'
 import Head from 'next/head'
+export async function getServerSideProps() {
+  const listRes = await fetch('http://localhost:8000/api/productsList/')
+  const listData = await listRes.json()
+  return { props: { listData } }
+}
 
-const Laminas = () => {
+const Laminas = ({listData}) => {
   return (
     <div>
       <Head>
@@ -44,9 +50,15 @@ const Laminas = () => {
 
         </ul>
         <p className='mt-3 mb-12 text-lg text-black md:text-xl '>
-        Finalmente tiene una larga vida lo cual le ayudará también a disminuir los costos de mantenimiento y valoriza su propiedad.
+          Finalmente tiene una larga vida lo cual le ayudará también a disminuir los costos de mantenimiento y valoriza su propiedad.
         </p>
       </div>
+      <section className="flex flex-col items-center justify-center">
+        <Titles type="h2" >Nuestros Productos</Titles>
+        <div className=" slider-container flex justify-center w-full md:max-w-screen-xl sm:max-w-screen-sm">
+          <SliderComponent data={listData} />
+        </div>
+      </section>
     </div>
   )
 }

@@ -1,4 +1,3 @@
-/* eslint-disable react/react-in-jsx-scope */
 import Link from "next/link";
 const Footer = () => {
   const road = [
@@ -18,10 +17,10 @@ const Footer = () => {
       name: "Accesorios",
       link: "/Accesorios"
     },
-    {
+    /* {
       name: "Carrito",
       link: "/carrito"
-    }
+    } */
   ]
   return (
     <footer className="bg-[#0833a2] dark:bg-gray-900">
